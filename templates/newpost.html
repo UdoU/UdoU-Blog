@@ -59,16 +59,23 @@
         
     </style>
 
+
     <body>
         <h1><a href="/">The UdoU Blog</a></h1>
 
-        <hr>
+        <form method="post">
+            <label>
+                <div>Title:</div>
+                <input type="text" name="title" value="{{title}}">
+            </label>
+            <label>
+                <div>Content:</div>
+                <textarea name="posttext">{{posttext}}</textarea>
+            </label>
+            <br>
+            <input type="submit">
+            <div class="error">{{error}}</div>
+        </form>
 
-        {% for post in posts %}
-            <div class="blogpost">
-                <div class="blogpost-title"><a href="/blog/{{post.key().id()}}">{{post.title}}</a></div>
-                <pre class="blogpost-body">{{post.posttext}}</pre>
-            </div>
-        {% endfor %}
     <body>
 </html>
